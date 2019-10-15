@@ -1,0 +1,35 @@
+<html>
+<body>
+  <h1>The Hardest Thing I've Learned</h1>
+    <p>The use of the D3 algorithm as a means to create HTML visual elements that in some way correspond to to data elements was difficult
+    for me to grasp at first. A good way to describe this use of D3 is in the sacred Murray Text where the prophet relates the function to
+    a relay race with each individual "piece" being akin to each of the individual relayers. The function is started by invoking the power 
+    of the D3 algorithm to select a location within an already existing HTML element. It then hands of a reference to the select all 
+    command which selects all of a given element within the DOM; if none of the given elements exist yet, it returns an "empty" selector as
+    a placeholder that reperesents the elements to be. The data command counts and parses out the data set given to it so that the data can
+    be related to a visual element. Then the enter command has its services requested so that it can create new, data bound elements; if
+    DOM elements aren't with us yet, it creates placeholder elements within the DOM. The append command is utilized next to take the empty
+    placeholder elements and convert them into soon to be visible HTML elements. From here there are two paths known to me that the
+    next relayer can take. Text can be inserted within the elements with the text command, or the attribute command can be used to insert
+    images or other things within the element. See the JavaScript below for an example.</p>
+    <pre>
+      var drawpenguin = function (penData)
+        {
+          d3.select("#penguinPen")
+            .selectAll("img")
+            .data(penData)
+            .enter()
+            .append("img")
+            .attr("src",function(d)
+              {
+                return d.picture;
+              })
+         }
+    </pre>
+  <h2>Questioning the Future</h2>
+    <p>Due to my understanding of the material thus far or possibly my ignorance of what I'm ignornt of, I am told by the master to ask 
+    where this knowledge is leading to. I'm curious as to how scraping works and the many possible things that can be done with it. The
+     master has deemed us neophytes not yet worthy of it's powers and I'm even more curious about how to use it. I also suspect that the
+     class will reveal more about D3 and the generation of web pages based on data.</p>
+</body>
+</html>
